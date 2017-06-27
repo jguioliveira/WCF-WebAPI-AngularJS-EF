@@ -1,0 +1,54 @@
+﻿<div ng-controller="productController" class="container-fluid">
+    <div class="alert alert-danger" role="alert" ng-show="Error != null">
+        <span ng-bind="Error.Message"></span>
+    </div>
+
+    <div class="panel panel-default">
+        
+
+        <div class="panel-body">
+            <div class="form-group">
+                <button class="btn" ng-click="GetToken()">Gerar Token</button>
+            </div>
+            <div class="row">
+                <div class="col-sm-1">Token:</div>
+                <div class="col-sm-4"><span ng-bind="token"></span></div>                
+            </div>
+            <div class="row">
+                <div class="col-sm-1">Espira em:</div>
+                <div class="col-sm-4"><span ng-bind="expirationTimer"></span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="form-group">
+                <button class="btn" ng-click="GetProducts()">Buscar Produtos Ajax</button>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">Produtos</div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nome</th>
+                            <th>Descrição</th>
+                            <th>Preço</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in productList">
+                            <td ng-bind="item.Id"></td>
+                            <td ng-bind="item.Name"></td>
+                            <td ng-bind="item.Description"></td>
+                            <td>{{item.Price | currency:"R$"}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>

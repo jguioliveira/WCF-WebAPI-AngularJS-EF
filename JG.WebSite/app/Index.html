@@ -1,0 +1,29 @@
+﻿<html>
+<head>
+    <title>Teste FCamara</title>
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/angular-route.min.js"></script>
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+    <script src="js/services/productService.js"></script>
+    <script src="js/controllers/productController.js"></script>    
+    <script src="js/controllers/homeController.js"></script>    
+    <link rel="stylesheet" href="../Content/bootstrap.min.css" />
+</head>
+<body ng-app="app">
+    
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#/product">Product</a>
+            </div>
+        </div>
+    </nav>
+    <div ng-controller="homeController"></div>
+
+    <div ng-view>
+
+    </div>
+</body>
+</html>
